@@ -8,7 +8,8 @@
         'app.navbar',
         'app.dashboard',
         'app.search',
-        'app.foursquare'
+        'app.foursquare',
+        'app.about'
     ]);
 
 })();

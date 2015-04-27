@@ -1,11 +1,11 @@
 /**
- * Created by Garie on 26/4/2015.
+ * Created by Garie on 28/4/2015.
  */
 (function() {
     'use strict';
 
     angular
-        .module('app.dashboard')
+        .module('app.about')
         .run(appRun);
 
     appRun.$inject = ['routerHelper'];
@@ -17,16 +17,16 @@
     function getStates() {
         return [
             {
-                state: 'dashboard',
+                state: 'about',
                 config: {
-                    url: '/dashboard',
-                    templateUrl: 'app/dashboard/dashboard.html',
-                    controller: 'DashboardController',
+                    url: '/about',
+                    templateUrl: 'app/about/about.html',
+                    controller: 'AboutController',
                     controllerAs: 'vm',
-                    title: 'dashboard',
+                    title: 'About',
                     settings: {
-                        nav: 1,
-                        content: '<i class="fa fa-dashboard"></i> Dashboard'
+                        nav: 3,
+                        content: '<i class="fa fa-about"></i> About'
                     }
                 }
             }
