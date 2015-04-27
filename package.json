@@ -6,7 +6,7 @@
     "init": "npm install",
     "start": "node src/server/app.js",
     "test": "gulp test",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "postinstall": "bower cache clean & bower install"
   },
   "dependencies": {
     "body-parser": "^1.8.2",
