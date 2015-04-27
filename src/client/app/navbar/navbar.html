@@ -1,0 +1,51 @@
+<div class="navbar navbar-default badge-primary navbar-fixed-top" ng-controller="NavBarController as vm">
+    <div class="navbar-header"><a class="navbar-brand" href="#">FoodSquare</a>
+        <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-left">
+            <li>
+                <form class="navbar-form" id="search-form" name="search-form">
+                <div class="input-group">
+                    <div class="btn-group" dropdown>
+                        <input type="text" class="form-control" placeholder="Restaurant">
+                        <button type="button" class="btn btn-success dropdown-toggle" dropdown-toggle>
+                            <span class="caret"></span>
+                            <span class="sr-only">Split button!</span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#">Action</a></li>
+                            <li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                        </ul>
+                    </div>
+                </div>
+                </form>
+            </li>
+            <li>
+                <form class="navbar-form" name="search-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="City, Suburbs">
+                    </div>
+                </form>
+            </li>
+            <li>
+                <form class="navbar-form" id="search-form" name="search-form">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                    </div>
+                </form>
+            </li>
+
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+</div>

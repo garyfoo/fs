@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/client/app/blocks/logger/logger.module.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/core/core.module.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/dashboard/dashboard.controller.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/dashboard/dashboard.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/dashboard/dashboard.module.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/dashboard/dashboard.route.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/foursquare/foursqaure.service.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/foursquare/foursquare.module.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/gmap/gmap.config.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/gmap/gmap.module.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/navbar/navbar.controller.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/navbar/navbar.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/navbar/navbar.module.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/search/gmapWindow.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/search/search.controller.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/search/search.filter.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/search/search.html" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/search/search.module.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/app/search/search.route.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/client/styles/styles.css" charset="UTF-8" />
+  </component>
+</project>

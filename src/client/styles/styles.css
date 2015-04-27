@@ -1,0 +1,34 @@
+html,body{
+    height:100%;
+}
+
+body{
+    padding-top:50px; /*padding for navbar*/
+}
+
+
+#main, #main>.row {
+    height:100%;
+}
+
+#left {
+    height:100%;
+    overflow-y:scroll;
+}
+
+#map-canvas {
+    width:33.3333%;
+    height:calc(100% - 0px);
+    z-index:-1;
+    position:absolute;
+    right:0;
+    top:0;
+}
+
+.angular-google-map-container{
+    height: 900px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}

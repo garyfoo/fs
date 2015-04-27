@@ -1,0 +1,122 @@
+<div class="navbar navbar-default badge-primary navbar-fixed-top">
+    <div class="navbar-header"><a class="navbar-brand" href="#">FoodSquare</a>
+        <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </a>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav pull-left">
+            <li>
+                <form class="navbar-form " name="search-form">
+                    <div class="input-group">
+                        <div class="btn-group" dropdown>
+                            <input type="text" class="form-control" ng-model="vm.exploreNearby" placeholder="Explore Places e.g. Brisbane">
+                            <button type="button" class="btn btn-success dropdown-toggle" dropdown-toggle>
+                                <span class="caret"></span>
+                                <span class="sr-only">Split button!</span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </form>
+            </li>
+            <li>
+                <form class="navbar-form" name="search-form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="vm.exploreQuery" placeholder="Category. e.g. Burger">
+                    </div>
+                </form>
+            </li>
+            <li>
+                <form class="navbar-form" name="search-form">
+                    <div class="input-group">
+                        <div class="input-group-btn">
+                            <button type="submit" ng-click="vm.performSearch()" class="btn btn-success"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                    </div>
+                </form>
+            </li>
+
+        </ul>
+        <ul class="nav navbar-nav pull-right">
+            <li><a href="#">About</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="map-canvas">
+</div>
+<div class="container-fluid" id="main">
+    <div class="row">
+        <div class="col-xs-4" id="left">
+
+            <!-- item list -->
+
+            <div class="well well-sm" ng-show="vm.totalRecordsCount == 0">
+                <h5>No Places found Near by ({{vm.exploreNearby}})</h5>
+            </div>
+            <div ng-show="vm.totalRecordsCount > 0">
+                <div class="row">
+                    <div class="col-md-12">
+                        <input type="text" ng-model="vm.filterValue" class="form-control" placeholder="Filter Places by (Place Name) or (Category)" />
+                    </div>
+                </div>
+                <ul class="list-group" ng-repeat="item in vm.filteredPlaces">
+                    <li class="list-group-item">
+                        <div class="row">
+                            <div class="col-xs-2 col-md-1">
+                                <img ng-src="{{vm.buildCategoryIcon(item.venue.categories[0].icon)}}"
+                                     title="{{item.venue.categories[0].shortName}}" class="venueIcon" />
+                            </div>
+                            <div class="col-xs-6 col-md-8">
+                                <a href="" ng-click="vm.showVenuePhotos(item.venue.id,item.venue.name)">
+                                    <h2 class="venueName">{{item.venue.name}}</h2>
+                                </a>
+                            </div>
+                            <div class="col-xs-4 col-md-3">
+                                &nbsp;
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-2 col-md-1">
+                                <b>Rating</b>
+                                <span class="badge">{{item.venue.rating | number:1}}</span>
+                            </div>
+                            <div class="col-xs-6 col-md-8">
+                                <p class="text-warning"><small>{{(item.venue.location.address != null) && item.venue.location.address}} - {{item.venue.categories[0].shortName}}</small></p>
+                                <p>{{item.tips[0].text}}</p>
+                            </div>
+                            <div class="col-xs-4 col-md-3">
+                                <a href="" ng-click="vm.showVenuePhotos(item.venue.id,item.venue.name)">
+                                    <img ng-src="{{vm.buildVenueThumbnail(item.venue.photos.groups[0])}}" class="img-thumbnail" /></a>
+                            </div>
+                        </div>
+
+                    </li>
+                </ul>
+            </div>
+            <!-- /item list -->
+
+        </div>
+        <div class="col-xs-8"><!--map-canvas will be postioned here-->
+            <ui-gmap-google-map center="vm.map.center" zoom="vm.map.zoom">
+                <!--
+                <ui-gmap-marker idKey="vm.marker.id" coords="vm.marker.coords" options="vm.marker.options"></ui-gmap-marker>
+                -->
+                <ui-gmap-markers models="vm.restaurantMarkers" templateUrl="'templateUrl'"
+                                 coords="'self'" icon="'icon'" click="'onClick'">
+                    <ui-gmap-windows show="show">
+                        <div ng-non-bindable><b>{{name}}</b><p>{{add}}</p></div>
+                    </ui-gmap-windows>
+                </ui-gmap-markers>
+            </ui-gmap-google-map>
+        </div>
+
+    </div>
+</div>
