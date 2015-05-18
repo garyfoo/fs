@@ -6,29 +6,115 @@ body{
     padding-top:50px; /*padding for navbar*/
 }
 
+.navbar{
+    z-index:2;
+}
 
-#main, #main>.row {
+#main {
     height:100%;
+}
+
+@media(max-width:767px){
+
+}
+
+@media(min-width:768px){
+    #left {
+        width: 70%;
+    }
+
+    #right {
+        width: 30%;
+    }
+}
+
+@media(min-width:992px){
+    #left {
+        width: 60%;
+    }
+
+    #right {
+        width: 40%;
+    }
+}
+
+@media(min-width:1200px){
+    #left {
+        width: 50%;
+    }
+
+    #right {
+        width: 50%;
+    }
+}
+
+@media(min-width:1392px){
+    #left {
+        width: 35%;
+    }
+
+    #right {
+        width: 65%;
+    }
+}
+
+.hoverColor {
+    background-color: #f4f9fc;
+}
+
+.list-special .list-group-item {
+    border: 0px
+}
+
+#logo {
+    padding-left:3px;
+}
+.venueName{
+    margin-top:6px;
+}
+.venueIcon{
+    margin-left:-7px;
+}
+
+.photoCaption{
+    margin-bottom:15px;
+}
+
+.pagination a {
+    cursor: pointer;
+}
+.seperator{
+    margin:3px 0 6px 0;
 }
 
 #left {
     height:100%;
-    overflow-y:scroll;
+    z-index: 1;
+    padding-top: 70px;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
 }
 
-#map-canvas {
-    width:33.3333%;
-    height:calc(100% - 0px);
-    z-index:-1;
-    position:absolute;
-    right:0;
-    top:0;
+#right {
+    height: 100%;
+    right: 15px;
+    padding-top: 50px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
 }
 
-.angular-google-map-container{
-    height: 900px;
+.angular-google-map-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
 }
 
 ::-webkit-scrollbar {
     display: none;
 }
+
+

@@ -208,7 +208,7 @@
         }
 
         function buildCategoryIcon(icon){
-            return icon.prefix + '44' + icon.suffix;
+            return icon.prefix + 'bg_44' + icon.suffix;
         }
 
         function buildVenueThumbnail(photo){

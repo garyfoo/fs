@@ -50,11 +50,9 @@
     </div>
 </div>
 
-<div id="map-canvas">
-</div>
 <div class="container-fluid" id="main">
     <div class="row">
-        <div class="col-xs-4" id="left">
+        <div class="col-md-5" id="left">
 
             <!-- item list -->
 
@@ -63,12 +61,16 @@
             </div>
             <div ng-show="vm.totalRecordsCount > 0">
                 <div class="row">
-                    <div class="col-md-12">
-                        <input type="text" ng-model="vm.filterValue" class="form-control" placeholder="Filter Places by (Place Name) or (Category)" />
+                    <div class="col-md-12 form-group">
+                        <label for="filterInput">Filter Place</label>
+                        <input type="text" id="filterInput" ng-model="vm.filterValue" class="form-control" placeholder="Filter Places by (Place Name) or (Category)" />
                     </div>
                 </div>
-                <ul class="list-group" ng-repeat="item in vm.filteredPlaces">
-                    <li class="list-group-item">
+
+                <ul class="list-group list-special" ng-repeat="item in vm.filteredPlaces">
+                    <li class="list-group-item" ng-class="{hoverColor: hover}"
+                        ng-mouseenter="hover = true"
+                        ng-mouseleave="hover = false">
                         <div class="row">
                             <div class="col-xs-2 col-md-1">
                                 <img ng-src="{{vm.buildCategoryIcon(item.venue.categories[0].icon)}}"
@@ -76,7 +78,7 @@
                             </div>
                             <div class="col-xs-6 col-md-8">
                                 <a href="" ng-click="vm.showVenuePhotos(item.venue.id,item.venue.name)">
-                                    <h2 class="venueName">{{item.venue.name}}</h2>
+                                    <h3 class="venueName">{{item.venue.name}}</h3>
                                 </a>
                             </div>
                             <div class="col-xs-4 col-md-3">
@@ -85,26 +87,25 @@
                         </div>
                         <div class="row">
                             <div class="col-xs-2 col-md-1">
-                                <b>Rating</b>
-                                <span class="badge">{{item.venue.rating | number:1}}</span>
+                                <span class="label label-success">{{item.venue.rating | number:1}}</span>
                             </div>
                             <div class="col-xs-6 col-md-8">
                                 <p class="text-warning"><small>{{(item.venue.location.address != null) && item.venue.location.address}} - {{item.venue.categories[0].shortName}}</small></p>
                                 <p>{{item.tips[0].text}}</p>
+                                <hr class="seperator" />
                             </div>
                             <div class="col-xs-4 col-md-3">
                                 <a href="" ng-click="vm.showVenuePhotos(item.venue.id,item.venue.name)">
                                     <img ng-src="{{vm.buildVenueThumbnail(item.venue.photos.groups[0])}}" class="img-thumbnail" /></a>
                             </div>
                         </div>
-
                     </li>
                 </ul>
             </div>
             <!-- /item list -->
 
         </div>
-        <div class="col-xs-8"><!--map-canvas will be postioned here-->
+        <div class="col-md-7 hidden-xs" id="right"><!--map-canvas will be postioned here-->
             <ui-gmap-google-map center="vm.map.center" zoom="vm.map.zoom">
                 <!--
                 <ui-gmap-marker idKey="vm.marker.id" coords="vm.marker.coords" options="vm.marker.options"></ui-gmap-marker>
